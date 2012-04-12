@@ -1,0 +1,42 @@
+DROP DATABASE IF EXISTS rsps6;
+
+CREATE DATABASE rsps6;
+
+-- GRANT ALL PRIVILEGES ON psa1dba.* to rahul@localhost IDENTIFIED BY 'rahul';
+
+USE rsps6;
+
+CREATE TABLE `products` (
+maker VARCHAR(256) NOT NULL,
+model INTEGER NOT NULL,
+type VARCHAR(256) NOT NULL,
+PRIMARY KEY (model)
+);
+
+CREATE TABLE `pcs` (
+model INTEGER NOT NULL,
+speed DECIMAL(4,3) NOT NULL,
+ram INTEGER NOT NULL,
+hd INTEGER NOT NULL,
+price DECIMAL(7,2) NOT NULL,
+PRIMARY KEY (model)
+);
+
+CREATE TABLE `laptops` (
+model INTEGER NOT NULL,
+speed DECIMAL(4,3) NOT NULL,
+ram INTEGER NOT NULL,
+hd INTEGER NOT NULL,
+screen DECIMAL(3,1) NOT NULL,
+price DECIMAL(7,2) NOT NULL,
+PRIMARY KEY (model)
+);
+
+
+CREATE TABLE `printers` (
+model INTEGER NOT NULL,
+color BOOLEAN,
+type VARCHAR(256) NOT NULL,
+price DECIMAL(7,2) NOT NULL,
+PRIMARY KEY (model)
+);
