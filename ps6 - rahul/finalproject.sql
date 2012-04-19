@@ -32,5 +32,5 @@ PRIMARY KEY (admin_id)
 CREATE TABLE `Departments` (
 dept_id INTEGER NOT NULL,
 dept_name VARCHAR(64) NOT NULL,
-PRIMARY KEY (admin_id)
+PRIMARY KEY (dept_id)
 );
