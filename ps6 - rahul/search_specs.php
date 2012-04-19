@@ -2,7 +2,7 @@
   <h1> Search by <?= $search_type ?></h1>
 </div>
 
-<form class="well" action="/search/specs">
+<form class="well" action="/index.php/search/specs">
   <label>Minimum speed:</label>
   <input type="text" name="min_speed" class="span3" value="<?= $_GET['min_speed'] ?>" placeholder="1.2">
   <span class="help-inline"> In Ghz</span>

@@ -2,7 +2,7 @@
   <h1> Search by <?= $search_type ?></h1>
 </div>
 
-<form class="well" action="/search/budget">
+<form class="well" action="/index.php/search/budget">
   <label>Budget:</label>
   <input type="text" name="budget" class="span3" value="<?= $_GET['budget'] ?>" placeholder="200">
   <span class="help-inline">0-10000 </span>

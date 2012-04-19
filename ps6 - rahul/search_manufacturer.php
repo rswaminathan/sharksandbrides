@@ -2,7 +2,7 @@
   <h1> Search by <?= $search_type ?></h1>
 </div>
 
-<form class="well" action="/search/manufacturer">
+<form class="well" action="/index.php/search/manufacturer">
   <label>Manufacturer:</label>
   <input type="text" name="manufacturer" class="span3" value="<?= $_GET['manufacturer'] ?>" placeholder="Apple">
   <span class="help-inline"> Dell, HP, Apple etc.</span>
