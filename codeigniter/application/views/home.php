@@ -1,4 +1,4 @@
-<?php 
+<?php
 //start session
 session_start();
 //checks if in session
@@ -14,7 +14,7 @@ header("location:index.html");
 <html>
 <head>
 <title>Sharks and Russian Brides - Home</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="/assets/style.css" />
 <script language="JavaScript" src="FusionCharts.js"></script>
 </head>
 

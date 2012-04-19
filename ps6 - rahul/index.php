@@ -42,6 +42,9 @@ case(preg_match('/search\/budget/', $url)):
 case(preg_match('/create/', $url)):
   require_once('create.php');
   break;
+case(preg_match('/employees/', $url)):
+  require_once('employee.php');
+  break;
 }
 ?>
 </div>

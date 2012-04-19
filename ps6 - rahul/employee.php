@@ -13,13 +13,6 @@ Richard Truong
 richard_truong@hmc.edu
 --->
 
-<head>
-<title> Sharks and Russian Brides - Employee Web Site </title>
-<link rel="stylesheet" type="text/css" href="assets/style.css" />
-<link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css" />
-</head>
-
-<body>
 <h1> Sharks and Russian Brides - Employee Web Site </h1>
 <ul id="list-nav">
 <li><a href="home.php">Home</a></li>
@@ -43,5 +36,3 @@ richard_truong@hmc.edu
 </table>
 
 <table class="login-info"><tr><td> Stuff sharks and brides and ads and awesome things about employees.  All links are dead except for the login box + stuff.</td></tr></table>
-</body>
-</html>
