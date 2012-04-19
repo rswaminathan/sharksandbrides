@@ -8,7 +8,12 @@ DROP DATABASE IF EXISTS finalproject;
 CREATE DATABASE finalproject;
 USE finalproject;
 
-CREATE TABLE Accounts (username VARCHAR(64), password VARCHAR(64), type VARCHAR(64));
+CREATE TABLE Accounts (
+  username VARCHAR(64), 
+  password VARCHAR(64), 
+  type VARCHAR(64)
+  PRIMARY_KEY (username)
+);
 
 CREATE TABLE `Customers` (
 customer_id INTEGER NOT NULL,
