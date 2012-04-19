@@ -22,7 +22,8 @@ Then run ps6.sql  to create the database and all the tables.
 
 The mysql socket file must be in /var/mysql/mysql.sock in a unix machine.
 
-Then make sure apache is running and pointing to this directory, and it allows rewrite through htaccess.
+Then make sure apache is running and pointing to this directory, and it allows rewrite through htaccess. The .htaccess file may be hidden so copy the whole folder instead of just the
+files ( or show all hidden files first)
 
 Then go to http://localhost. If no data shows up, click the button "Seed database" which will seed random data.
 
