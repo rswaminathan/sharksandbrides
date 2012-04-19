@@ -1,13 +1,16 @@
-------
+<!---
+Kevin Riley
+40138837
+kriley@hmc.edu
 
 Rahul Swaminathan
-Problem Set 6
+40150271
+rswaminathan@g.hmc.edu
 
-rswaminathan@hmc.edu
-
---------
-
-
+Richard Truong
+40115583
+richard_truong@hmc.edu
+--->
 
 INSTRUCTIONS:
 

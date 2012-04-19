@@ -1,17 +1,4 @@
 <html>
-<!---
-Kevin Riley
-40138837
-kriley@hmc.edu
-
-Rahul Swaminathan
-40150271
-rswaminathan@g.hmc.edu
-
-Richard Truong
-40115583
-richard_truong@hmc.edu
---->
 
 <h1> Sharks and Russian Brides - Employee Web Site </h1>
 <ul id="list-nav">

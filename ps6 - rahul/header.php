@@ -10,7 +10,7 @@
         <li><a href="/search/manufacturer">By Manufacturer</a></li>
         <li><a href="/employees">Employees</a></li>
         <li class="divider-vertical"></li>
-        <li><a href="/create">Insert PC</a></li>
+        <li><a href="/create">Browse Specials</a></li>
         <li><a href="/seed_database">Seed Database</a></li>
       </ul>
     </div>
