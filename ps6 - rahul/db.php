@@ -1,6 +1,6 @@
 <?
-$con = mysql_connect("localhost","ps6", "password");
-$db = mysql_select_db('rsps6');
+$con = mysql_connect("localhost","root", "homework");
+$db = mysql_select_db('finalproject');
 echo mysql_error();
 ?>
 
