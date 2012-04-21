@@ -11,7 +11,7 @@ USE finalproject;
 CREATE TABLE Accounts (
   username VARCHAR(64), 
   password VARCHAR(64), 
-  type VARCHAR(64)
+  type VARCHAR(64),
   PRIMARY_KEY (username)
 );
 
@@ -38,4 +38,3 @@ CREATE TABLE `Departments` (
 dept_id INTEGER NOT NULL,
 dept_name VARCHAR(64) NOT NULL,
 PRIMARY KEY (dept_id)
-);
