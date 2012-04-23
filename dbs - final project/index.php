@@ -51,6 +51,9 @@ case(preg_match('/employeereg/', $url)):
 case(preg_match('/employeegetpw/', $url)):
   require_once('employeegetpw.php');
   break;
+case(preg_match('/cart/', $url)):
+  require_once('cart.php');
+  break;
 }
 ?>
 </div>
