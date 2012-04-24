@@ -4,11 +4,12 @@
   <input type="text" name="username" />
   <label>Password</label>
   <input type="password" name="password" />
+  </br></br></br>
   <button type="submit" class="btn btn-large">Login</button>
   </form>
 
   <form action="egetpw" method="link">
-  <input type="submit" value="Forgot your password?" /></form>
+  <input type="submit" class="btn btn-large" value="Forgot your password?" /></form>
 
   <tr><form action="ereg" method="link">
-  <td><input type="submit" value="New Employee?" /></td></form></tr>
+  <td><input type="submit" class="btn btn-large" value="New Customer?" /></td></form></tr>
