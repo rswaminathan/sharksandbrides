@@ -8,7 +8,6 @@
         <li><a href="/index.php/aquariums">See Aquariums</a></li>
         <li><a href="/index.php/hometowns">See Hometowns</a></li>
         <li><a href="/index.php/search/manufacturer">By Manufacturer</a></li>
-        <li><a href="/index.php/employees">Employees</a></li>
         <li class="divider-vertical"></li>
         <? if (current_user()){ ?>
         <li><a href="/index.php/account"><h4><?= current_user() ?></h4></a></li>
