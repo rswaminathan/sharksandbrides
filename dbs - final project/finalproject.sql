@@ -79,6 +79,7 @@ CREATE TABLE `Hometowns` (
   city_id INTEGER NOT NULL,
   name VARCHAR(64) NOT NULL,
   population INTEGER NOT NULL,
+  mayor VARCHAR(64) NOT NULL,  
   province VARCHAR(64) NOT NULL,
   PRIMARY KEY (city_id)
 );
