@@ -18,8 +18,8 @@ if (mysql_num_rows($result) == 0) {
 <tr>
   <th>Name</th>
   <th>Date Founded</th>
-  <th>Owner</th>
   <th>Manager</th>
+  <th>Trainer</th>
   <th>Number of Sharks Available</th>
 </tr>
 </thead>
@@ -28,8 +28,8 @@ if (mysql_num_rows($result) == 0) {
 <tr>
   <td><?php echo $row["name"]; ?></td>
   <td><?php echo $row["date_founded"]; ?></td>
-  <td><?php echo $row["owner"]; ?></td>
   <td><?php echo $row["manager"]; ?></td>
+  <td><?php echo $row["trainer"]; ?></td>
   <td><?php 
 		$sharks = mysql_query("SELECT * FROM Sharks WHERE aquarium_id='" . $row["aquarium_id"] . "'");
 		echo mysql_num_rows($sharks); 

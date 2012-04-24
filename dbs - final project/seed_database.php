@@ -3,55 +3,83 @@
 </div>
 
 <?
-$makers = array("HP", "Dell", "Apple", "Sony", "Acer");
-$types = array("PC", "Laptop", "Printer");
-$rams = array(1, 2, 3, 4, 8);
-$hds = array(80, 120, 180, 250, 500);
-$screens = array(11, 12, 13, 15, 17);
-$speeds = array(1, 2, 2.2, 2.5, 3);
-$prices = array(400, 600, 800, 1200, 1600, 2000);
-$printer_types = array("Inkjet", "Laser");
+
+//GENERATE SHARKS
+$malenames = array("Liam", "Noah", "Aiden", "Jackson", "Caleb", "Oliver", "Grayson", "Ethan", "Alexander", "Owen");
+$categories = array("Great White", "Tiger", "Whale", "Bull", "Hammerhead", "Goblin", "Mako", "Blue", "Lemon", "Basking", "Megamouth", "Prehistoric");
+$genders = array("Male", "Female");
 
 for($i = 0; $i< 1000; $i++){
-  $rand_type = rand(0,2);
+  $name = $malenames[array_rand($malenames)];
+  $category = $categories[array_rand($categories)];
+  $gender = $genders[array_rand($genders)];
 
-
-  $speed = $speeds[array_rand($speeds)];
-  $price = $prices[array_rand($prices)];
-  $printer_type = $printer_types[array_rand($printer_types)];
-  $screen = $screens[array_rand($screens)];
-  $hd = $hds[array_rand($hds)];
-  $ram = $rams[array_rand($rams)];
-  $type = $types[array_rand($types)];
-  $maker = $makers[array_rand($makers)];
-
-  $sql = "INSERT INTO products(maker, model, type) VALUES('{$maker }', '$i', '$types[$rand_type]')";
-
-  //echo $sql;
-
-  $product_sql = array();
-  $product_sql[0] = "INSERT INTO pcs(model, speed, ram, hd, price) VALUES('$i',
-  {$speed }, {$ram }, {$hd }, {$price })";
-
-  $product_sql[1] = "INSERT INTO laptops(model, speed, ram, hd, screen, price) VALUES('$i',
-  {$speed }, {$ram }, {$hd },{$screen },  {$price })";
-
-  $rand = rand(0,1);
-  $product_sql[2] = "INSERT INTO printers(model, color, type, price) VALUES('$i',
-  {$rand}, '{$printer_type}',  {$price })";
-  //echo $product_sql[2];
-
-
-  $r1 = mysql_query($sql);
-  $r2 = mysql_query($product_sql[$rand_type]);
-
-  if(!$r1 || !$r2){
+  $sql = "INSERT INTO Sharks(item_id, name, age, category, gender, aquarium_id, price) VALUES(" . $i . ", '" . $name . "', " . rand(0,99) . ", '" . $category . "', '" . $gender . "', " . rand(0,50) . ", " . rand(50,99) . ")";
+  $r = mysql_query($sql);
+  
+  if(!$r){
     echo "<div class='alert alert-error'> An error occured seeding the database</div>";
     echo mysql_error();
     exit;
   }
 }
+
+//BRIDES TABLE
+$femalenames = array("Charlotte", "Sophia", "Amelia", "Olivia", "Ava", "Lily", "Emma", "Scarlett", "Audrey", "Harper");
+
+for($i = 0; $i< 1000; $i++){
+  $name = $femalenames[array_rand($femalenames)];
+  $gender = $genders[array_rand($genders)];
+
+  $sql = "INSERT INTO RussianBrides(item_id, name, age, ssn, gender, city_id, price, weight) VALUES(" . $i . ", '" . $name . "', " . rand(0,99) . ", " . rand(100000000, 999999999) . ", '" . $gender . "', " . rand(1,10) . ", " . rand(50,99) . ", " . rand(80, 450) . ")";
+  $r = mysql_query($sql);
+  
+  if(!$r){
+    echo "<div class='alert alert-error'> An error occured seeding the database</div>";
+    echo mysql_error();
+    exit;
+  }
+}
+
+//GENERATE AQUARIUMS
+$aquariums = array("Pacific", "South", "Atlantic", "West", "North", "East", "Green", "Blue", "Red", "Arctic");
+$genders = array("Male", "Female");
+
+for($i = 0; $i< 50; $i++){
+  $aquarium = $aquariums[array_rand($malenames)];
+  $trainer = $malenames[array_rand($malenames)];
+  $manager = $malenames[array_rand($malenames)];
+
+
+  $sql = "INSERT INTO Aquariums(aquarium_id, date_founded, manager, trainer, name) VALUES(" . $i . ", '" . rand(1900,2011) . "-" . rand(1,12) . "-" . rand(1, 28) . "', '" . $manager . "', '" . $trainer . "', '" . $aquarium . "')";
+  $r = mysql_query($sql);
+  
+  if(!$r){
+    echo "<div class='alert alert-error'> An error occured seeding the database</div>";
+    echo mysql_error();
+    exit;
+  }
+}
+
+//GENERATE HOMETOWNS
+$hometowns = array("Abakan", "Balashov", "Claremont", "Dudinka", "Elista", "Izhevsk", "Kaliningrad", "Kaluga", "Maysky", "Moscow", "Novy Urengoy", "Reutov");
+
+  
+for($i = 1; $i<= 10; $i++){
+  $mayor = $malenames[array_rand($malenames)];
+  $sql = "INSERT INTO Hometowns(city_id, name, population, mayor) VALUES(" . $i . ", '" . $hometowns[$i] . "', " . rand(90000, 9000001) . ", '" . $mayor . "')";
+  $r = mysql_query($sql);
+  
+  if(!$r){
+    echo "<div class='alert alert-error'> An error occured seeding the database</div>";
+    echo mysql_error();
+    exit;
+  }
+}
+
 ?>
 
-<p> Inserted 1000 random values into database </p>
-<a href="/"> See products </a>
+<p> Inserted 1000 random sharks into database. </p>
+<p> Inserted 1000 random russian brides into database. </p>
+<p> Inserted 50 random aquariums into database. </p>
+<p> Inserted 50 random hometowns into database. </p>

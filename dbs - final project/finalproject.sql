@@ -27,8 +27,8 @@ CREATE TABLE `Administrators` (
 CREATE TABLE `Aquariums` (
   aquarium_id INTEGER NOT NULL,
   date_founded DATE,
-  owner VARCHAR(64),
   manager VARCHAR(64),
+  trainer VARCHAR(64),
   name VARCHAR(64),
   PRIMARY KEY (aquarium_id)
 );
@@ -80,7 +80,6 @@ CREATE TABLE `Hometowns` (
   name VARCHAR(64) NOT NULL,
   population INTEGER NOT NULL,
   mayor VARCHAR(64) NOT NULL,  
-  province VARCHAR(64) NOT NULL,
   PRIMARY KEY (city_id)
 );
 
@@ -140,11 +139,11 @@ CREATE TABLE `RussianBrides` (
   age INTEGER NOT NULL,
   gender VARCHAR(64) NOT NULL,
   city_id VARCHAR(64) NOT NULL,
-  picture_id INTEGER NOT NULL,
+  picture_id INTEGER,
   discount_id INTEGER,
   special_id INTEGER,
   price FLOAT NOT NULL,
-  category VARCHAR(64) NOT NULL,
+  weight INTEGER NOT NULL,
   PRIMARY KEY (item_id)
 );
 
@@ -154,7 +153,7 @@ CREATE TABLE `Sharks` (
   age INTEGER NOT NULL,
   category VARCHAR(64) NOT NULL,
   gender VARCHAR(64) NOT NULL,
-  picture_id INTEGER NOT NULL,
+  picture_id INTEGER,
   aquarium_id INTEGER NOT NULL,
   discount_id INTEGER,
   special_id INTEGER,
