@@ -82,4 +82,4 @@ for($i = 1; $i<= 10; $i++){
 <p> Inserted 1000 random sharks into database. </p>
 <p> Inserted 1000 random russian brides into database. </p>
 <p> Inserted 50 random aquariums into database. </p>
-<p> Inserted 50 random hometowns into database. </p>
+<p> Inserted 10 random hometowns into database. </p>
