@@ -1,12 +1,28 @@
-<form action="checklogin.php" method="post">
-<tr><td>Please Login Below:</td></tr>
-<tr><td>Username: <input type="text" name="username" /></td></tr>
-<tr><td>Password: <input type="password" name="password" /></td></tr>
-<tr><td><input type="submit" value="Login"/></td></form></tr>
+<? function login_form(){
+  require_once('login_form.php');
+}
+?>
 
-<tr><form action="egetpw" method="link">
-<td><input type="submit" value="Forgot your password?" /></td></form></tr>
+<?php
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+  $username = $_POST["username"];
+  $password = $_POST["password"];
 
-<tr><form action="ereg" method="link">
-<td><input type="submit" value="New Employee?" /></td></form></tr>
+  $result = mysql_query("SELECT * FROM Accounts WHERE username='" . $username . "' AND " . "password='" . $password . "'");
+  if (mysql_num_rows($result) == 0) { ?>
 
+  <div class="alert alert-error">
+  Username/password is invalid.
+  </div>
+
+<?
+  login_form();
+  } else{
+  $_SESSION['username'] = $username;
+  }
+}
+
+else{
+  login_form();
+}
+?>

@@ -11,12 +11,12 @@
         <li><a href="/index.php/employees">Employees</a></li>
         <li class="divider-vertical"></li>
         <? if (current_user()){ ?>
-        <li><a href="/index.php/account"><?= current_user() ?></a></li>
+        <li><a href="/index.php/account"><h4><?= current_user() ?></h4></a></li>
         <li><a href="/index.php/cart">Cart</a></li>
-        <? } else ?>
-        <li><a href="index.php/login">Login</a></li>
-        <li><a href="/index.php/cart">Cart</a></li>
-        ?>
+        <? } else { ?>
+        <li><a href="/index.php/login">Login</a></li>
+        <li><a href="/index.php/ureg">Register</a></li>
+        <? } ?>
       </ul>
     </div>
   </div>

@@ -2,7 +2,7 @@
 session_start();
 
 function current_user(){
-  if ($_SESSION['username'])
+  if (isset($_SESSION['username']))
     return $_SESSION['username'];
   else
     return false;
