@@ -2,6 +2,18 @@
   <h1> Your Cart </h1>
 </div>
 
+<? if ($_SERVER['REQUEST_METHOD'] == "POST") {
+  $item_id = $_POST['item_id'];
+  $customer_id = current_user();
+  $result = mysql_query("INSERT INTO Cart(item_id, customer_id) VALUES('$item_id', '$customer_id')");
+ ?>
+
+<div class="alert alert-success">
+<?= $_POST[$item] ?> has been added to cart.
+</div>
+<? }
+?>
+
 <div class="well">
   <div class="row">
     <div class="span4">

@@ -1,7 +1,7 @@
 <div class="navbar">
   <div class="navbar-inner">
     <div class="container">
-      <a class="brand"> <img src="/static/shark.png" width="70" /> & Brides</a>
+      <a class="brand">Sharks & Brides</a>
       <ul class="nav">
         <li> <a href="/">Home</a> </li>
         <li class="divider-vertical"></li>

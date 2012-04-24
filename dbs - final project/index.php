@@ -7,6 +7,7 @@
 </head>
 <body>
 <?
+require_once('session.php');
 require_once('header.php');
 ?>
 
@@ -19,9 +20,6 @@ $url = $_SERVER['REQUEST_URI'];
 switch(true){
 case($url == '/'):
   require_once('home.php');
-  break;
-case(preg_match('/seed_database/', $url)):
-  require_once('insert_data.php');
   break;
 case(preg_match('/search\/price/', $url)):
   $search_type = "Price";
@@ -39,21 +37,14 @@ case(preg_match('/search\/budget/', $url)):
   $search_type = "Budget";
   require_once('search_budget.php');
   break;
-case(preg_match('/create/', $url)):
-  require_once('create.php');
-  break;
 case(preg_match('/employees/', $url)):
   require_once('employee.php');
   break;
-case(preg_match('/employeereg/', $url)):
-  require_once('employeereg.php');
-  break;
-case(preg_match('/employeegetpw/', $url)):
-  require_once('employeegetpw.php');
-  break;
-case(preg_match('/cart/', $url)):
-  require_once('cart.php');
-  break;
+default:
+  $matches;
+  preg_match('/\/index.php\/(.*)/', $url, $matches);
+  require_once($matches[1] . ".php");
+
 }
 ?>
 </div>
