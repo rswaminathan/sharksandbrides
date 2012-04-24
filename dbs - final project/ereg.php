@@ -26,11 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			}
 		}
 	} else {
-		echo "Wrong employee code."; ?>
+		echo "Wrong employee code. </br></br>"; ?>
 		
-		<p class = "reg-command">Please register below: (employee code is "qwer1234!@#$")</p>
+		<p>Please register below: (employee code is "qwer1234!@#$")</p>
 
-		<form action="employeereg.php" method="post" >
+		<form action="ereg.php" method="post" >
 		Create username: <input type="text" name="username" />
 		<br />
 		Choose password: <input type="text" name="password" />
@@ -40,12 +40,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		<input type="submit" value="Register" />
 		</form>
 
-<?
+<?php
 	}
 } else { ?>
-<p class = "reg-command">Please register below: (employee code is "qwer1234!@#$")</p>
+<p>Please register below: (employee code is "qwer1234!@#$")</p>
 
-<form action="employeereg.php" method="post">
+<form action="ereg.php" method="post">
 Create username: <input type="text" name="username" />
 <br />
 Choose password: <input type="text" name="password" />
@@ -55,5 +55,5 @@ Employee Code: <input type="text" name="ecode" />
 <input type="submit" value="Register" />
 </form>
 
-<? }
+<?php }
 ?>
