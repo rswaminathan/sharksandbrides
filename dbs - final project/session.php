@@ -1,8 +1,9 @@
 <?
+session_start();
+
 function current_user(){
-  session_start();
-  if ($_SESSION['user_id'])
-    return $_SESSION['user_id'];
+  if ($_SESSION['username'])
+    return $_SESSION['username'];
   else
     return false;
 }
