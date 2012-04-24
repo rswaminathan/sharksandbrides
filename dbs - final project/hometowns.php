@@ -19,7 +19,6 @@ if (mysql_num_rows($result) == 0) {
   <th>Name</th>
   <th>Population</th>
   <th>Mayor</th>
-  <th>Province</th>
   <th>Number of Brides Available</th>
 </tr>
 </thead>
@@ -29,7 +28,6 @@ if (mysql_num_rows($result) == 0) {
   <td><?php echo $row["name"]; ?></td>
   <td><?php echo $row["population"]; ?></td>
   <td><?php echo $row["mayor"]; ?></td>
-  <td><?php echo $row["province"]; ?></td>
   <td><?php 
 		$brides = mysql_query("SELECT * FROM RussianBrides WHERE city_id='" . $row["city_id"] . "'");
 		echo mysql_num_rows($brides); 
