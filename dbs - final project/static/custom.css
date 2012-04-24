@@ -1,0 +1,12 @@
+.footer{
+  margin-top: 40px;
+  background: #222;
+}
+
+.footer li{
+  float:left;
+}
+
+.nav li a h4{
+  color: #fff;
+}

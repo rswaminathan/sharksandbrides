@@ -10,9 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		if ($row) {
 			echo "Username taken.  Go back and choose a different username.";
 		} else {
-			mysql_query("INSERT INTO `Accounts` (username, password, type) VALUES('" . $username 
+			mysql_query("INSERT INTO `Accounts` (username, password, type) VALUES('" . $username
 			. "','" . $password . "','employee')");
-			
+
 			echo "<p class = \"ty-ty\">Thank You For Registering With Sharks and Russian Brides!</p>";
 
 			$check = mysql_query("SELECT * FROM Accounts WHERE username='" . $username . "' AND password='" . $password ."'");
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		}
 	} else {
 		echo "Wrong employee code. </br></br>"; ?>
-		
+
 		<p>Please register below: (employee code is "qwer1234!@#$")</p>
 
 		<form action="ereg.php" method="post" >

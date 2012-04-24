@@ -10,10 +10,14 @@
         <li><a href="/index.php/search/manufacturer">By Manufacturer</a></li>
         <li><a href="/index.php/employees">Employees</a></li>
         <li class="divider-vertical"></li>
-        <li><a href="/index.php/create">Browse Specials</a></li>
-        <li><a href="/index.php/seed_database">Seed Database</a></li>
+        <? if (current_user()){ ?>
+        <li><a href="/index.php/account"><h4><?= current_user() ?></h4></a></li>
+        <li><a href="/index.php/cart">Cart</a></li>
+        <? } else { ?>
+        <li><a href="/index.php/login">Login</a></li>
+        <li><a href="/index.php/ureg">Register</a></li>
+        <? } ?>
       </ul>
     </div>
   </div>
 </div>
-<div class="container">
