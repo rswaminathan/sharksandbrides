@@ -27,6 +27,7 @@
     </div>
   </div>
 </div>
+
 <form class="checkout" action="/index.php/checkout/">
   <button type="submit" class="btn btn-large btn-primary" style="float:right;">Checkout</button>
 </form>

@@ -20,7 +20,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   } else{
     mysql_query("INSERT INTO `Accounts` (username, password, type) VALUES('" . $username
       . "','" . $password . "','customer')");
-    $_SESSION['username'] = $username;
+    $_SESSION['username'] = $username; ?>
+
+    <script type="text/javascript">
+    window.location = "/index.php/home"
+    </script>
+
+    <?
   }
 }
 

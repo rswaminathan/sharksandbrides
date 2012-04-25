@@ -18,7 +18,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <?
   login_form();
   } else{
-  $_SESSION['username'] = $username;
+    $_SESSION['username'] = $username; ?>
+
+    <script type="text/javascript">
+    window.location = "/index.php/home"
+    </script>
+<?
   }
 }
 
