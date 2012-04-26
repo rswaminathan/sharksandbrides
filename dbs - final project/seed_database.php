@@ -182,7 +182,6 @@ for($i = 1; $i< 21; $i++){
 
 //Shipping methods
 	$sql = "INSERT INTO ShippingMethods(shipping_id, shipper_name, shipment_type, shipment_cost) VALUES("."0". " , " . "'Little Red Riding Hood'" . ", " . "'Yesterday Delivery '". ", " . "1000" . ")";
-	echo $sql;
 	$r = mysql_query($sql);
 if(!$r){
     echo "<div class='alert alert-error'> An error occured seeding the database</div>";

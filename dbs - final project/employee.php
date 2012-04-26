@@ -1,7 +1,10 @@
 <table>
 
 <form action="checklogin.php" method="post">
-<tr><td>Please Login Below:</td></tr>
+<div class="page-header">
+  <h1>Please Login Below:</h1>
+</div>
+
 <tr><td>Username: <input type="text" name="username" /></td></tr>
 <tr><td>Password: <input type="password" name="password" /></td></tr>
 <tr><td><input type="submit" value="Login"/></td></form></tr>

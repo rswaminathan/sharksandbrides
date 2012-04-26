@@ -28,7 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	} else {
 		echo "Wrong employee code. </br></br>"; ?>
 
-		<p>Please register below: (employee code is "qwer1234!@#$")</p>
+<div class="page-header">
+  <h1>Please register below: (employee code is "qwer1234!@#$")</h1>
+</div>
 
 		<form action="ereg.php" method="post" >
 		Create username: <input type="text" name="username" />
@@ -43,7 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <?php
 	}
 } else { ?>
-<p>Please register below: (employee code is "qwer1234!@#$")</p>
+<div class="page-header">
+  <h1>Please register below: (employee code is "qwer1234!@#$")</h1>
+</div>
 
 <form action="ereg.php" method="post">
 Create username: <input type="text" name="username" />

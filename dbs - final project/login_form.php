@@ -1,5 +1,7 @@
 <form action="/index.php/login" class="form-horizontal" method="post">
-  <h1>Please Login Below:</h1>
+<div class="page-header">
+  <h1>Please login below:</h1>
+</div>
   <label>Username</label>
   <input type="text" name="username" />
   <label>Password</label>
