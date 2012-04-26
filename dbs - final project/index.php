@@ -43,7 +43,12 @@ case(preg_match('/employees/', $url)):
   break;
 default:
   $matches;
-  preg_match('/\/index.php\/(.*)/', $url, $matches);
+  preg_match('/\/index.php\/(.*)\?.*/', $url, $matches);
+  if ($matches){
+  }
+  else{
+    preg_match('/\/index.php\/(.*)/', $url, $matches);
+  }
   require_once($matches[1] . ".php");
 }
 ?>
