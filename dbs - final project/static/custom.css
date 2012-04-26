@@ -19,3 +19,12 @@
 .banner{
   margin-top: 70px;
 }
+
+.banner .span7{
+  margin-top: 120px;
+}
+
+.carousel-inner img{
+  width: 380px;
+  height: 380px;
+}
