@@ -15,6 +15,23 @@ if (isset($_GET['item_id'])) {
   $price = mysql_fetch_array(mysql_query("SELECT price FROM Products WHERE item_id='$item_id' AND type='$item_type'"));
   $price = $price["price"];
   $result = mysql_query("INSERT INTO Cart(item_id, username, type, price) VALUES('$item_id', '$username', '$item_type', '$price')");
+}
+if (isset($_GET['special_id'])){
+  $special_id = $_GET['special_id'];
+  $result = mysql_query("SELECT * FROM Specials WHERE special_id=$special_id");
+  $row = mysql_fetch_array($result);
+  $percent_off = $row["percent_off"];
+  $shark_id = $row["shark_id"];
+  $shark_price = mysql_query("SELECT price From Products WHERE item_id=$shark_id AND type='shark'");
+  $shark_price = mysql_fetch_array($shark_price);
+  $shark_price = $shark_price["price"];
+  $bride_id = $row["bride_id"];
+  $bride_price = mysql_query("SELECT price From Products WHERE item_id=$bride_id AND type='bride'");
+  $bride_price = mysql_fetch_array($bride_price);
+  $bride_price = $bride_price["price"];
+
+  $result = mysql_query("INSERT INTO Cart(item_id, username, type, price) VALUES('$shark_id', '$username', 'shark', '($shark_price*(1-$percent_off/100))')");
+  $result = mysql_query("INSERT INTO Cart(item_id, username, type, price) VALUES('$bride_id', '$username', 'bride', '($bride_price*(1-$percent_off/100))')");
 ?>
 
 <div class="alert alert-success">
