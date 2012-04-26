@@ -44,7 +44,7 @@ while ($shark = mysql_fetch_assoc($sharks)) {
 <div class="caption">
 <h4> <?= $shark["name"] ?> </h4>
 <p>
-Price: $<?= $product_price["price"] ?>
+Price: $<?= $product_price["price"] ?>.00
 </p>
 <p>
 <a href="/index.php/cart?item_id=<?= $shark_id ?>&type=shark" class="btn btn-primary">Add to Cart</a>

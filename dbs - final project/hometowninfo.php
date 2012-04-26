@@ -37,12 +37,17 @@ while ($bride = mysql_fetch_assoc($brides)) {
     $picture = mysql_fetch_assoc($pictures);
   else
     $picture = "";
+
+  $product_price = mysql_fetch_array(mysql_query("SELECT price FROM Products WHERE item_id=$bride_id AND type='bride'"));
 ?>
 <li class="span3">
 <div class="thumbnail">
 <img src="/<?= $picture["picture_url"] ?>" />
 <div class="caption">
 <h4> <?= $bride["name"] ?> </h4>
+<p>
+Price: $<?= $product_price["price"] ?>.00
+</p>
 <p>
 <a href="/index.php/cart?item_id=<?= $bride_id ?>&type=bride" class="btn btn-primary">Add to Cart</a>
 <a href="/index.php/reviews?id=<?= $bride_id ?>" class="btn">Reviews</a>
@@ -56,4 +61,3 @@ while ($bride = mysql_fetch_assoc($brides)) {
 </div>
 
 <?php } ?>
-

@@ -48,9 +48,8 @@ while ($row = mysql_fetch_assoc($items)){
   }
   $item = mysql_fetch_array($item);
   $product = mysql_fetch_array(mysql_query("SELECT * FROM Products WHERE item_id='$item_id'"));
-  $item_id = $item["id"];
-  $pictures = mysql_query("SELECT * From Pictures WHERE picture_id=(SELECT picture_id
-    FROM $type WHERE item_id='$item_id')");
+  $item_id = $item["item_id"];
+  $pictures = mysql_query("SELECT * From Pictures WHERE picture_id=(SELECT picture_id FROM $type WHERE item_id='$item_id')");
   $picture = mysql_fetch_array($pictures);
   $picture_url = $picture["picture_url"];
 ?>
@@ -60,4 +59,8 @@ while ($row = mysql_fetch_assoc($items)){
     <div class="span3"> $<?= $product["price"] ?> </div>
   </div>
 <? } ?>
+</div>
+
+<div class="checkout" style="float:right;">
+<a href="/index.php/checkout" class="btn btn-large btn-primary">Checkout</a>
 </div>
