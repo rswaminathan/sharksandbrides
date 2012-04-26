@@ -180,8 +180,49 @@ for($i = 1; $i< 21; $i++){
   }
 }
 
+//Shipping methods
+	$sql = "INSERT INTO ShippingMethods(shipping_id, shipper_name, shipment_type, shipment_cost) VALUES("."0". " , " . "'Little Red Riding Hood'" . ", " . "'Yesterday Delivery '". ", " . "1000" . ")";
+	echo $sql;
+	$r = mysql_query($sql);
+if(!$r){
+    echo "<div class='alert alert-error'> An error occured seeding the database</div>";
+    echo mysql_error();
+    exit;
+	}
+	$sql = "INSERT INTO ShippingMethods(shipping_id, shipper_name, shipment_type, shipment_cost) VALUES("."1". " , " . "'Tron Bike'" . ", " . "'Seizure Inducing'". ", " . "80" . ")";
+	
+  $r = mysql_query($sql);
+  
+if(!$r){
+    echo "<div class='alert alert-error'> An error occured seeding the database</div>";
+    echo mysql_error();
+    exit;
+	}
+	$sql = "INSERT INTO ShippingMethods(shipping_id, shipper_name, shipment_type, shipment_cost) VALUES("."2". " , " . "'Carrier Pidgeon'" . ", " . "'Four Months'". ", " . "200" . ")";
+  $r = mysql_query($sql);
+  
+if(!$r){
+    echo "<div class='alert alert-error'> An error occured seeding the database</div>";
+    echo mysql_error();
+    exit;
+	}
+	$sql = "INSERT INTO ShippingMethods(shipping_id, shipper_name, shipment_type, shipment_cost) VALUES("."3". " , " . "'There Can Only Be One'" . ", " . "'Highlander Delivery '". ", " . "10000" . ")";
+	
+  $r = mysql_query($sql);
+if(!$r){
+    echo "<div class='alert alert-error'> An error occured seeding the database</div>";
+    echo mysql_error();
+    exit;
+}
+	$sql = "INSERT INTO ShippingMethods(shipping_id, shipper_name, shipment_type, shipment_cost) VALUES("."4". " , " . "'Cannon'" . ", " . "'Objects May Be Slightly Damaged'". ", " . "200" . ")";
+	$r = mysql_query($sql);
+	
+if(!$r){
+    echo "<div class='alert alert-error'> An error occured seeding the database</div>";
+    echo mysql_error();
+    exit;
+	}
 ?>
-
 <p> Inserted 1000 random sharks into database. </p>
 <p> Inserted 1000 random russian brides into database. </p>
 <p> Inserted 50 random aquariums into database. </p>

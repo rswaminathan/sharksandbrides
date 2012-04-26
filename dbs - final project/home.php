@@ -6,7 +6,6 @@
 <div class="actions">
 <a href="/index.php/specials" class="btn btn-large btn-primary">Browse Specials</a>
 <a href="/index.php/aquariums" class="btn-large btn">See Aquariums</a>
-<a href="/index.php/hometowns" class="btn-large btn">See Hometowns</a>
 </div>
     </div>
     <div class="span5">
@@ -34,10 +33,8 @@ if (mysql_num_rows($result) == 0) {
 
 ?>
 <script>
-$.ready(
 $('.carousel').carousel({
-  interval: 3000;
-})
-)
+  interval: 1000;
+}
 </script>
 

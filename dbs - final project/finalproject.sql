@@ -44,7 +44,7 @@ CREATE TABLE `Cart` (
   username VarChar(64) NOT NULL,
   item_id INTEGER NOT NULL,
   type VarChar(64),
-  percent_off INTEGER NULL
+  price INTEGER NULL
 );
 
 CREATE TABLE `CreditCards` (
