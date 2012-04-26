@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		<p>Enter your username associated with your account:</p>
 		<p>(security question implemented in a later patch)</p>
 
-		<form action="egetpw.php" method="post">
+		<form action="egetpw" method="post">
 		Username: <input type="text" name="username" />
 		<br />
 		<input type="submit" value="Get Password!" />
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <p>Enter your username associated with your account:</p>
 <p>(security question implemented in a later patch)</p>
 
-<form action="egetpw.php" method="post">
+<form action="egetpw" method="post">
 Username: <input type="text" name="username" />
 <br />
 <input type="submit" value="Get Password!" />
