@@ -44,7 +44,7 @@ while ($bride = mysql_fetch_assoc($brides)) {
 <div class="caption">
 <h4> <?= $bride["name"] ?> </h4>
 <p>
-<a href="/index.php/cart?item_id=<?= $bride_id ?>" class="btn btn-primary">Add to Cart</a>
+<a href="/index.php/cart?item_id=<?= $bride_id ?>&type=bride" class="btn btn-primary">Add to Cart</a>
 <a href="/index.php/reviews?id=<?= $bride_id ?>" class="btn">Reviews</a>
 </p>
 </div>

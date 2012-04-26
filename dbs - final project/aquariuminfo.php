@@ -35,6 +35,8 @@ while ($shark = mysql_fetch_assoc($sharks)) {
     $picture = mysql_fetch_assoc($pictures);
   else
     $picture = "";
+
+  $product_price = mysql_fetch_array(mysql_query("SELECT price FROM Products WHERE item_id=$shark_id AND type='shark'"));
 ?>
 <li class="span3">
 <div class="thumbnail">
@@ -42,7 +44,10 @@ while ($shark = mysql_fetch_assoc($sharks)) {
 <div class="caption">
 <h4> <?= $shark["name"] ?> </h4>
 <p>
-<a href="/index.php/cart?item_id=<?= $shark_id ?>" class="btn btn-primary">Add to Cart</a>
+Price: $<?= $product_price["price"] ?>
+</p>
+<p>
+<a href="/index.php/cart?item_id=<?= $shark_id ?>&type=shark" class="btn btn-primary">Add to Cart</a>
 <a href="/index.php/reviews?id=<?= $shark_id ?>" class="btn">Reviews</a>
 </p>
 </div>

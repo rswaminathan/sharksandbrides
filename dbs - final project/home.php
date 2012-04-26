@@ -2,6 +2,11 @@
   <div class="row">
     <div class="span4">
       <h1> Beautiful and Deadly </h1>
+<p>Browse the best selection of deadly sharks and beautiful brides.</p>
+<div class="actions">
+<a href="/index.php/specials" class="btn btn-large btn-primary">Browse Specials</a>
+<a href="/index.php/aquariums" class="btn-large btn">See Aquariums</a>
+</div>
     </div>
     <div class="span8">
     <div id="myCarousel" class="carousel">
