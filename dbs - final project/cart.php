@@ -62,5 +62,6 @@ while ($row = mysql_fetch_assoc($items)){
 </div>
 
 <div class="checkout" style="float:right;">
+<a href="/index.php/clearcart" class="btn btn-large">Clear Cart</a> &nbsp; &nbsp; &nbsp; 
 <a href="/index.php/checkout" class="btn btn-large btn-primary">Checkout</a>
 </div>
