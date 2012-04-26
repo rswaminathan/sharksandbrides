@@ -1,5 +1,7 @@
 <form action="/index.php/ureg" class="form-horizontal" method="post">
-  <h1>Create An Account Below:</h1>
+<div class="page-header">
+  <h1>Create an Account Below:</h1>
+</div>
   <label>Choose a Username</label>
   <input type="text" name="username" />
   <label>Choose a Password</label>
