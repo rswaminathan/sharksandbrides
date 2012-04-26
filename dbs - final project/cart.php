@@ -34,7 +34,18 @@ if (isset($_GET['item_id'])) {
   </div>
 <? $items = mysql_query("SELECT * FROM Cart WHERE customer_id='$customer_id'");
 while ($row = mysql_fetch_assoc($items)){
-  $item = "Shark";
+  //find whether shark or bride
+  $item_id = $row["item_id"];
+  $is_shark = mysql_query("SELECT * FROM Sharks WHERE item_id='$item_id'");
+
+  if ($is_shark){
+    $item = $is_shark;
+  }
+  else{
+    $item = mysql_query("SELECT * FROM RussianBrides WHERE item_id='$item_id'");
+  }
+  $product = mysql_query("SELECT * FROM Products WHERE item_id='$item_id'");
+
   $price = "29.99";
   $picture = "";
 ?>
@@ -43,47 +54,11 @@ while ($row = mysql_fetch_assoc($items)){
       <img src="/<?= $item ?>" height="100px" width="100px">
     </div>
     <div class="span4">
-      <?= $item ?>
+      <?= $item["name"] ?>
     </div>
     <div class="span3">
-    $<?= $price ?>
+    $<?= $product["price"] ?>
     </div>
   </div>
 <? } ?>
 </div>
-
-<form class="checkout" action="/index.php/checkout/">
-  <button type="submit" class="btn btn-large btn-primary" style="float:right;">Checkout</button>
-</form>
-<?
-  $input_price = $_GET['price'];
-  echo $input_price;
-  if($input_price){
-    $result = mysql_query("SELECT maker, pcs.model, speed, price FROM pcs, products WHERE pcs.model = products.model ORDER BY ABS(price - '$input_price' )");
-    echo mysql_error();
-
-    if (mysql_num_rows($result) == 0) {
-      echo "Nothing found";
-      exit;
-    }
-
-?>
-<table class="table table-striped">
-<thead>
-<tr>
-  <th>Model</th>
-  <th>Maker</th>
-  <th>Speed</th>
-  <th>Price</th>
-</tr>
-</thead>
-<?  while ($row = mysql_fetch_assoc($result)) { ?>
-<tr>
-  <td><?= $row["model"] ?></td>
-  <td><?= $row["maker"] ?></td>
-  <td><?= $row["speed"] ?> Ghz</td>
-  <td><?= $row["price"] ?></td>
-<? break;} ?>
-</table>
-
-<?  } ?>
