@@ -24,7 +24,7 @@ if (!$username){ ?>
   </div>
 <? $items = mysql_query("SELECT * FROM Cart WHERE username='$username'");
   $total_price = mysql_fetch_array(mysql_query("SELECT SUM(price) FROM Cart WHERE username='$username'"));
-while ($row = mysql_fetch_assoc($items)){
+  while ($row = mysql_fetch_assoc($items)){
   //get either shark or bride
   $item_id = $row["item_id"];
 
