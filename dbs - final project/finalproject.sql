@@ -83,11 +83,6 @@ CREATE TABLE `Hometowns` (
   PRIMARY KEY (city_id)
 );
 
-CREATE TABLE `ItemSpecials` (
-  item_id INTEGER NOT NULL,
-  special_id INTEGER NOT NULL
-);
-
 CREATE TABLE `Mayors` (
   mayor_id INTEGER NOT NULL,
   favorite_color VARCHAR(64),
@@ -140,7 +135,7 @@ CREATE TABLE `RussianBrides` (
   gender VARCHAR(64) NOT NULL,
   city_id VARCHAR(64) NOT NULL,
   picture_id INTEGER,
-  discount_id INTEGER,
+  percent_off INTEGER,
   special_id INTEGER,
   price FLOAT NOT NULL,
   weight INTEGER NOT NULL,
@@ -155,7 +150,7 @@ CREATE TABLE `Sharks` (
   gender VARCHAR(64) NOT NULL,
   picture_id INTEGER,
   aquarium_id INTEGER NOT NULL,
-  discount_id INTEGER,
+  percent_off INTEGER,
   special_id INTEGER,
   price FLOAT NOT NULL,
   PRIMARY KEY (item_id)
@@ -172,6 +167,8 @@ CREATE TABLE `ShippingMethods` (
 CREATE TABLE `Specials` (
   special_id INTEGER NOT NULL,
   percent_off INTEGER NOT NULL,
+  shark_id INTEGER NOT NULL,
+  bride_id INTEGER NOT NULL,
   PRIMARY KEY (special_id)
 );
 
