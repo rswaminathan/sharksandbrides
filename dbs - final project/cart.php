@@ -40,7 +40,7 @@ while ($row = mysql_fetch_assoc($items)){
 ?>
   <div class="row">
     <div class="span4">
-      <img src=" <?= $item ?>">
+      <img src="/<?= $item ?>" height="100px" width="100px">
     </div>
     <div class="span4">
       <?= $item ?>
