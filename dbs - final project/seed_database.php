@@ -14,7 +14,7 @@ for($i = 0; $i< 1000; $i++){
   $category = $categories[array_rand($categories)];
   $gender = $genders[array_rand($genders)];
 
-  $sql = "INSERT INTO Sharks(item_id, name, age, category, gender, aquarium_id) VALUES(" . $i . ", '" . $name . "', " . rand(0,99) . ", '" . $category . "', '" . $gender . "', " . rand(0,50) . ")";
+  $sql = "INSERT INTO Sharks(item_id, name, age, category, gender, aquarium_id, picture_id) VALUES(" . $i . ", '" . $name . "', " . rand(0,99) . ", '" . $category . "', '" . $gender . "', " . rand(0,50) .",".rand(1,20).")";
   $r = mysql_query($sql);
   
   if(!$r){
@@ -31,7 +31,7 @@ for($i = 0; $i< 1000; $i++){
   $name = $femalenames[array_rand($femalenames)];
   $gender = $genders[array_rand($genders)];
 
-  $sql = "INSERT INTO RussianBrides(item_id, name, age, ssn, gender, city_id, weight) VALUES(" . $i . ", '" . $name . "', " . rand(0,99) . ", " . rand(100000000, 999999999) . ", '" . $gender . "', " . rand(1,10) . ", " . rand(80, 450) . ")";
+  $sql = "INSERT INTO RussianBrides(item_id, name, age, ssn, gender, city_id, weight, picture_id) VALUES(" . $i . ", '" . $name . "', " . rand(0,99) . ", " . rand(100000000, 999999999) . ", '" . $gender . "', " . rand(1,10) . ", " . rand(80, 450) . "," . rand(21,40). ")";
   $r = mysql_query($sql);
   
   if(!$r){
@@ -108,6 +108,37 @@ for($i = 0; $i< 10; $i++){
     exit;
   }
 }
+
+//MAKE PICTURES TABLE
+$picture_width = 200;
+$picture_height = 200;
+for($i = 1; $i< 21; $i++){
+  $picture_id = $i;
+  $picture_url = "sharks/shark".$i.".jpg";
+  $picture_type = "shark";
+  $sql = "INSERT INTO Pictures(picture_id, picture_url, picture_width, picture_height, picture_type) VALUES(".$picture_id.", '" . $picture_url . "', " . $picture_width . ", " . $picture_height . ", '" . $picture_type . "')";
+  $r = mysql_query($sql);
+  
+  if(!$r){
+    echo "<div class='alert alert-error'> An error occured seeding the database</div>";
+    echo mysql_error();
+    exit;
+  }
+}
+for($i = 1; $i< 21; $i++){
+  $picture_id = $i+20;
+  $picture_url = "brides/brides".$i.".jpg";
+  $picture_type = "bride";
+  $sql = "INSERT INTO Pictures(picture_id, picture_url, picture_width, picture_height, picture_type) VALUES(".$picture_id.", '" . $picture_url . "', " . $picture_width . ", " . $picture_height . ", '" . $picture_type . "')";
+  $r = mysql_query($sql);
+  
+  if(!$r){
+    echo "<div class='alert alert-error'> An error occured seeding the database</div>";
+    echo mysql_error();
+    exit;
+  }
+}
+
 ?>
 
 <p> Inserted 1000 random sharks into database. </p>
@@ -115,3 +146,4 @@ for($i = 0; $i< 10; $i++){
 <p> Inserted 50 random aquariums into database. </p>
 <p> Inserted 10 random hometowns into database. </p>
 <p> Inserted 10 random combo specials (today's deals) into database. </p>
+<p> Added pictures to picture table </p>

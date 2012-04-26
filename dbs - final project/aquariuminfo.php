@@ -29,8 +29,8 @@ if (mysql_num_rows($result) == 0) {
 		$sharks = mysql_query("SELECT * FROM Sharks WHERE aquarium_id='" . $row["aquarium_id"] . "'");
 while ($shark = mysql_fetch_assoc($sharks)) {
   $shark_id = $shark["item_id"];
-  $pictures = mysql_query("SELECT * From Pictures WHERE picture_id=SELECT picture_id
-    FROM SHARKS WHERE item_id='$shark_id'");
+  $pictures = mysql_query("SELECT * From Pictures WHERE picture_id=(SELECT picture_id
+    FROM SHARKS WHERE item_id='$shark_id')");
   if ($pictures)
     $picture = mysql_fetch_assoc($pictures);
   else
@@ -38,7 +38,7 @@ while ($shark = mysql_fetch_assoc($sharks)) {
 ?>
 <li class="span3">
 <div class="thumbnail">
-<img src="<?= $picture["picture_url"] ?>" />
+<img src="/<?= $picture["picture_url"] ?>" />
 <div class="caption">
 <h4> <?= $shark["name"] ?> </h4>
 <p>
