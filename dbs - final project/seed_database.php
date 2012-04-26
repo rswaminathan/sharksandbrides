@@ -24,6 +24,26 @@ for($i = 0; $i< 1000; $i++){
   }
 }
 
+//ADD WEBSITE
+$sql = "INSERT INTO Sharks(item_id, name, age, category, gender, aquarium_id, picture_id) VALUES(-1, 'Website', 1, '" . $category . "', '" . $gender . "', " . rand(0,50) .",".rand(1,20).")";
+$r = mysql_query($sql);
+
+if(!$r){
+    echo "<div class='alert alert-error'> An error occured seeding the database</div>";
+    echo mysql_error();
+    exit;
+}
+
+$sql = "INSERT INTO Products(item_id, type, description, price, percent_off) VALUES(-1, 'shark', 'Website. This one.', 1000000, 0)";
+$r = mysql_query($sql);
+
+if(!$r){
+    echo "<div class='alert alert-error'> An error occured seeding the database</div>";
+    echo mysql_error();
+    exit;
+}
+
+
 //BRIDES TABLE
 $femalenames = array("Charlotte", "Sophia", "Amelia", "Olivia", "Ava", "Lily", "Emma", "Scarlett", "Audrey", "Harper", "Jennifer", "Sara", "Sarah");
 
