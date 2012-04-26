@@ -31,8 +31,8 @@ if (mysql_num_rows($result) == 0) {
 		$brides = mysql_query("SELECT * FROM RussianBrides WHERE city_id='" . $row["city_id"] . "'");
 while ($bride = mysql_fetch_assoc($brides)) {
   $bride_id = $bride["item_id"];
-  $pictures = mysql_query("SELECT * From Pictures WHERE picture_id=SELECT picture_id
-    FROM RussianBrides WHERE item_id='$bride_id'");
+  $pictures = mysql_query("SELECT * From Pictures WHERE picture_id=(SELECT picture_id
+    FROM RussianBrides WHERE item_id='$bride_id')");
   if ($pictures)
     $picture = mysql_fetch_assoc($pictures);
   else
@@ -40,7 +40,7 @@ while ($bride = mysql_fetch_assoc($brides)) {
 ?>
 <li class="span3">
 <div class="thumbnail">
-<img src="<?= $picture["picture_url"] ?>" />
+<img src="/<?= $picture["picture_url"] ?>" />
 <div class="caption">
 <h4> <?= $bride["name"] ?> </h4>
 <p>
