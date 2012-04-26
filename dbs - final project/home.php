@@ -32,4 +32,9 @@ if (mysql_num_rows($result) == 0) {
 }
 
 ?>
+<script>
+$('.carousel').carousel({
+  interval: 1000;
+}
+</script>
 
