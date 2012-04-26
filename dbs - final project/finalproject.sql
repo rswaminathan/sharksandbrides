@@ -41,22 +41,22 @@ CREATE TABLE `AquariumManagers` (
 );
 
 CREATE TABLE `Cart` (
-  customer_id INTEGER NOT NULL,
+  username VarChar(64) NOT NULL,
   item_id INTEGER NOT NULL,
-  last_visited DATE NOT NULL
+  type VarChar(64)
 );
 
 CREATE TABLE `CreditCards` (
-  card_id INTEGER NOT NULL,
+  username VARCHAR(64) NOT NULL,
   type VARCHAR(64) NOT NULL,
   card_number INTEGER NOT NULL,
-  PRIMARY KEY (card_id)
+  first_name VARCHAR(64) NOT NULL,
+  last_name VARCHAR(64) NOT NULL
 );
 
 CREATE TABLE `Customers` (
   username VARCHAR(64) NOT NULL,
   address VARCHAR(256) NOT NULL,
-  card_id INTEGER,
   first_name VARCHAR(64) NOT NULL,
   last_name VARCHAR(64) NOT NULL,
   PRIMARY KEY (username)
