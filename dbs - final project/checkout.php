@@ -24,6 +24,7 @@ if (!$username){ ?>
   </div>
 <? $items = mysql_query("SELECT * FROM Cart WHERE username='$username'");
   $total_price = mysql_fetch_array(mysql_query("SELECT SUM(price) FROM Cart WHERE username='$username'"));
+  $total_price = $total_price["SUM(price)"];
   while ($row = mysql_fetch_assoc($items)){
   //get either shark or bride
   $item_id = $row["item_id"];
@@ -49,16 +50,28 @@ if (!$username){ ?>
     <div class="span3"> $<?= $product["price"] ?> </div>
   </div>
 <? } ?>
+</div>
   <div class="row">
-    <div class="span4">
-    <h3>Total Price:</h3>
-    </div>
     <div class="span3" style="float:right;">
-  <h3></h3>
+    <h3>Price: $<span class="price"><?= $total_price ?></span></h3>
+    Shipping: <select id="shipping">
+    <? $methods = mysql_query("SELECT * From ShippingMethods");
+  while ($row = mysql_fetch_assoc($methods)){
+?>
+  <option data-price="<?= $row["shipment_cost"] ?>"> <?= $row["shipper_name"] . " (" . $row["shipment_type"] . ") - $" . $row["shipment_cost"] ?></option>
+<? } ?>
+    </select>
+    <h3>Total: $<span id="total_price"><?= $total_price + 1000?></span></h3>
     </div>
   </div>
-</div>
 
 <div class="checkout" style="float:right;">
-<a href="/index.php/checkout" class="btn btn-large btn-primary">Confirm Purchase</a>
+<a href="/index.php/confirm" class="btn btn-large btn-primary">Confirm Purchase</a>
 </div>
+<script>
+    $.ready(
+      $("#shipping").change(function(){
+        $("#total_price").text($("option:selected").data("price") + parseInt($(".price").text()))
+      })
+    )
+</script>

@@ -12,7 +12,9 @@ if (!$username){ ?>
 if (isset($_GET['item_id'])) {
   $item_id = $_GET['item_id'];
   $item_type = $_GET['type'];
-  $result = mysql_query("INSERT INTO Cart(item_id, username, type) VALUES('$item_id', '$username', '$item_type')");
+  $price = mysql_fetch_array(mysql_query("SELECT price FROM Products WHERE item_id='$item_id' AND type='$item_type'"));
+  $price = $price["price"];
+  $result = mysql_query("INSERT INTO Cart(item_id, username, type, price) VALUES('$item_id', '$username', '$item_type', '$price')");
 ?>
 
 <div class="alert alert-success">
@@ -62,6 +64,6 @@ while ($row = mysql_fetch_assoc($items)){
 </div>
 
 <div class="checkout" style="float:right;">
-<a href="/index.php/clearcart" class="btn btn-large">Clear Cart</a> &nbsp; &nbsp; &nbsp; 
+<a href="/index.php/clearcart" class="btn btn-large">Clear Cart</a> &nbsp; &nbsp; &nbsp;
 <a href="/index.php/checkout" class="btn btn-large btn-primary">Checkout</a>
 </div>
