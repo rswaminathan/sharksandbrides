@@ -49,7 +49,7 @@ CREATE TABLE `Cart` (
 CREATE TABLE `CreditCards` (
   username VARCHAR(64) NOT NULL,
   type VARCHAR(64) NOT NULL,
-  card_number INTEGER NOT NULL,
+  card_number VARCHAR(64) NOT NULL,
   first_name VARCHAR(64) NOT NULL,
   last_name VARCHAR(64) NOT NULL
 );

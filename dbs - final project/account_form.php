@@ -9,3 +9,8 @@
   </br></br>
   <button type="submit" class="btn btn-large">Update</button>
 </form>
+
+</br></br></br></br>
+<form action="/index.php/card" class="form-horizontal" method="get">
+  <button type="submit" class="btn btn-large">Update credit card info!</button>
+</form>
