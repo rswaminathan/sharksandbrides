@@ -8,7 +8,7 @@
         <li><a href="/index.php/aquariums">See Aquariums</a></li>
         <li><a href="/index.php/hometowns">See Hometowns</a></li>
         <li><a href="/index.php/specials">Today's Deals</a></li>
-        <li><a href="/index.php/specials">Buy Website</a></li>
+        <li><a href="/index.php/buywebsite">Buy Website</a></li>
         <li class="divider-vertical"></li>
         <? if (current_user()){ ?>
         <li><a href="/index.php/account"><h4><?= current_user() ?></h4></a></li>
