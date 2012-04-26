@@ -4,8 +4,8 @@
 
 <?
 
-$sql = implode("\n", file('buildDB.sql'));
-mysql_query($sql);
+shell_exec("mysql -uroot < finalproject.sql");
+echo mysql_error();
 //GENERATE SHARKS
 $malenames = array("Liam", "Noah", "Aiden", "Jackson", "Caleb", "Oliver", "Grayson", "Ethan", "Alexander", "Owen", "Art", "Kevin", "Rahul", "Richard");
 $categories = array("Great White", "Tiger", "Whale", "Bull", "Hammerhead", "Goblin", "Mako", "Blue", "Lemon", "Basking", "Megamouth", "Prehistoric");
@@ -34,6 +34,27 @@ for($i = 0; $i< 1000; $i++){
   $gender = $genders[array_rand($genders)];
 
   $sql = "INSERT INTO RussianBrides(item_id, name, age, ssn, gender, city_id, weight, picture_id) VALUES(" . $i . ", '" . $name . "', " . rand(0,99) . ", " . rand(100000000, 999999999) . ", '" . $gender . "', " . rand(1,10) . ", " . rand(80, 450) . "," . rand(21,40). ")";
+  $r = mysql_query($sql);
+
+  if(!$r){
+    echo "<div class='alert alert-error'> An error occured seeding the database</div>";
+    echo mysql_error();
+    exit;
+  }
+}
+
+//PRODUCTS TABLE
+for($i = 0; $i< 1000; $i++){
+  $sql = "INSERT INTO Products(item_id, type, description, price, percent_off) VALUES(" . $i . ", 'shark', 'I am shark.', " . rand(50,12000) . ", 0)";
+  $r = mysql_query($sql);
+
+  if(!$r){
+    echo "<div class='alert alert-error'> An error occured seeding the database</div>";
+    echo mysql_error();
+    exit;
+  }
+
+  $sql = "INSERT INTO Products(item_id, type, description, price, percent_off) VALUES(" . $i . ", 'bride', 'Call me.', " . rand(50,12000) . ", 0)";
   $r = mysql_query($sql);
 
   if(!$r){
