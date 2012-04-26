@@ -11,5 +11,5 @@
   <form action="egetpw" method="link">
   <input type="submit" class="btn btn-large" value="Forgot your password?" /></form>
 
-  <tr><form action="ereg" method="link">
+  <tr><form action="ureg" method="link">
   <td><input type="submit" class="btn btn-large" value="New Customer?" /></td></form></tr>
