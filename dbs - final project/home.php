@@ -14,7 +14,7 @@
       <div class="carousel-inner">
         <div class="active item"><img src="/sharks/shark13.jpg"></div>
         <div class="item"><img src="/sharks/shark16.jpg"></div>
-        <div class="item"><img src="/brides/bride1.jpg"</div>
+        <div class="item"><img src="/brides/bride9.jpg"</div>
       </div>
       <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
       <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
