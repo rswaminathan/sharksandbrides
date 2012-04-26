@@ -5,7 +5,7 @@
 <?
 
 //GENERATE SHARKS
-$malenames = array("Liam", "Noah", "Aiden", "Jackson", "Caleb", "Oliver", "Grayson", "Ethan", "Alexander", "Owen");
+$malenames = array("Liam", "Noah", "Aiden", "Jackson", "Caleb", "Oliver", "Grayson", "Ethan", "Alexander", "Owen", "Art", "Kevin", "Rahul", "Richard");
 $categories = array("Great White", "Tiger", "Whale", "Bull", "Hammerhead", "Goblin", "Mako", "Blue", "Lemon", "Basking", "Megamouth", "Prehistoric");
 $genders = array("Male", "Female");
 
@@ -25,7 +25,7 @@ for($i = 0; $i< 1000; $i++){
 }
 
 //BRIDES TABLE
-$femalenames = array("Charlotte", "Sophia", "Amelia", "Olivia", "Ava", "Lily", "Emma", "Scarlett", "Audrey", "Harper");
+$femalenames = array("Charlotte", "Sophia", "Amelia", "Olivia", "Ava", "Lily", "Emma", "Scarlett", "Audrey", "Harper", "Jennifer", "Sara", "Sarah");
 
 for($i = 0; $i< 1000; $i++){
   $name = $femalenames[array_rand($femalenames)];
@@ -42,11 +42,11 @@ for($i = 0; $i< 1000; $i++){
 }
 
 //GENERATE AQUARIUMS
-$aquariums = array("Pacific", "South", "Atlantic", "West", "North", "East", "Green", "Blue", "Red", "Arctic");
+$aquariums = array("Pacific", "South", "Atlantic", "West", "North", "East", "Green", "Blue", "Red", "Arctic", "Flame", "Shooting Moon", "Highest Tide", "Shining Sun", "Pirate Bay", "Purple Tide", "Red Tide", "Blue Tide", "High Tide", "Aquarium1", "Aquarium2", "Aquarium3", "GenericAquarium1", "GenericAquarium1.0");
 $genders = array("Male", "Female");
 
 for($i = 0; $i< 50; $i++){
-  $aquarium = $aquariums[array_rand($malenames)];
+  $aquarium = $aquariums[array_rand($aquariums)];
   $trainer = $malenames[array_rand($malenames)];
   $manager = $malenames[array_rand($malenames)];
 
