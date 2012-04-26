@@ -1,4 +1,3 @@
-
 <?php
 $type = "Aquariums";
 $id_type = "aquarium_id";
