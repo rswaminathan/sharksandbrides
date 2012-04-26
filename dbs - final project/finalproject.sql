@@ -114,7 +114,9 @@ CREATE TABLE `Pictures` (
   
 CREATE TABLE `Products` (
   item_id INTEGER NOT NULL,
-  type VARCHAR(64)
+  type VARCHAR(64),
+  percent_off INTEGER,
+  price FLOAT NOT NULL
 );
 
 CREATE TABLE `Reviews` (
@@ -135,9 +137,7 @@ CREATE TABLE `RussianBrides` (
   gender VARCHAR(64) NOT NULL,
   city_id VARCHAR(64) NOT NULL,
   picture_id INTEGER,
-  percent_off INTEGER,
   special_id INTEGER,
-  price FLOAT NOT NULL,
   weight INTEGER NOT NULL,
   PRIMARY KEY (item_id)
 );
@@ -150,9 +150,7 @@ CREATE TABLE `Sharks` (
   gender VARCHAR(64) NOT NULL,
   picture_id INTEGER,
   aquarium_id INTEGER NOT NULL,
-  percent_off INTEGER,
   special_id INTEGER,
-  price FLOAT NOT NULL,
   PRIMARY KEY (item_id)
 );
 
