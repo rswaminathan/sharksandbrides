@@ -127,7 +127,7 @@ for($i = 1; $i< 21; $i++){
 }
 for($i = 1; $i< 21; $i++){
   $picture_id = $i+20;
-  $picture_url = "brides/brides".$i.".jpg";
+  $picture_url = "brides/bride".$i.".jpg";
   $picture_type = "bride";
   $sql = "INSERT INTO Pictures(picture_id, picture_url, picture_width, picture_height, picture_type) VALUES(".$picture_id.", '" . $picture_url . "', " . $picture_width . ", " . $picture_height . ", '" . $picture_type . "')";
   $r = mysql_query($sql);
