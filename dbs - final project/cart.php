@@ -3,11 +3,16 @@
 </div>
 
 <?
-  $customer_id = current_user();
-  if (isset($_GET['item_id'])) {
+$customer_id = current_user();
+if (!$customer_id){ ?>
+  <script type="text/javascript">
+    window.location = "/index.php/home"
+  </script>
+<?}
+if (isset($_GET['item_id'])) {
   $item_id = $_GET['item_id'];
   $result = mysql_query("INSERT INTO Cart(item_id, customer_id) VALUES('$item_id', '$customer_id')");
- ?>
+?>
 
 <div class="alert alert-success">
 <?= $_POST[$item] ?> has been added to cart.
@@ -51,16 +56,16 @@ while ($row = mysql_fetch_assoc($items)){
   <button type="submit" class="btn btn-large btn-primary" style="float:right;">Checkout</button>
 </form>
 <?
-$input_price = $_GET['price'];
-echo $input_price;
-if($input_price){
-  $result = mysql_query("SELECT maker, pcs.model, speed, price FROM pcs, products WHERE pcs.model = products.model ORDER BY ABS(price - '$input_price' )");
-  echo mysql_error();
+  $input_price = $_GET['price'];
+  echo $input_price;
+  if($input_price){
+    $result = mysql_query("SELECT maker, pcs.model, speed, price FROM pcs, products WHERE pcs.model = products.model ORDER BY ABS(price - '$input_price' )");
+    echo mysql_error();
 
-  if (mysql_num_rows($result) == 0) {
+    if (mysql_num_rows($result) == 0) {
       echo "Nothing found";
       exit;
-  }
+    }
 
 ?>
 <table class="table table-striped">

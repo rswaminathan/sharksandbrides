@@ -25,12 +25,12 @@ if (mysql_num_rows($result) == 0) {
 
 <?php while ($row = mysql_fetch_assoc($result)) { ?>
 <tr>
-  <td><?php echo $row["name"]; ?></td>
+  <td> <a href="/index.php/hometowninfo?id=<?= $row["city_id"]?>"> <?php echo $row["name"]; ?> </a> </td>
   <td><?php echo $row["population"]; ?></td>
   <td><?php echo $row["mayor"]; ?></td>
-  <td><?php 
+  <td><?php
 		$brides = mysql_query("SELECT * FROM RussianBrides WHERE city_id='" . $row["city_id"] . "'");
-		echo mysql_num_rows($brides); 
+		echo mysql_num_rows($brides);
 	  ?>
 <?php } ?>
 </table>
