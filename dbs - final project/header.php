@@ -13,6 +13,7 @@
         <? if (current_user()){ ?>
         <li><a href="/index.php/account"><h4><?= current_user() ?></h4></a></li>
         <li><a href="/index.php/cart">Cart</a></li>
+		<li><a href="/index.php/logout">Logout</a></li>
         <? } else { ?>
         <li><a href="/index.php/login">Login</a></li>
         <li><a href="/index.php/ureg">Register</a></li>
