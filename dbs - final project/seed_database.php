@@ -14,7 +14,7 @@ for($i = 0; $i< 1000; $i++){
   $category = $categories[array_rand($categories)];
   $gender = $genders[array_rand($genders)];
 
-  $sql = "INSERT INTO Sharks(item_id, name, age, category, gender, aquarium_id, price) VALUES(" . $i . ", '" . $name . "', " . rand(0,99) . ", '" . $category . "', '" . $gender . "', " . rand(0,50) . ", " . rand(50,99) . ")";
+  $sql = "INSERT INTO Sharks(item_id, name, age, category, gender, aquarium_id) VALUES(" . $i . ", '" . $name . "', " . rand(0,99) . ", '" . $category . "', '" . $gender . "', " . rand(0,50) . ")";
   $r = mysql_query($sql);
   
   if(!$r){
@@ -31,7 +31,7 @@ for($i = 0; $i< 1000; $i++){
   $name = $femalenames[array_rand($femalenames)];
   $gender = $genders[array_rand($genders)];
 
-  $sql = "INSERT INTO RussianBrides(item_id, name, age, ssn, gender, city_id, price, weight) VALUES(" . $i . ", '" . $name . "', " . rand(0,99) . ", " . rand(100000000, 999999999) . ", '" . $gender . "', " . rand(1,10) . ", " . rand(50,99) . ", " . rand(80, 450) . ")";
+  $sql = "INSERT INTO RussianBrides(item_id, name, age, ssn, gender, city_id, weight) VALUES(" . $i . ", '" . $name . "', " . rand(0,99) . ", " . rand(100000000, 999999999) . ", '" . $gender . "', " . rand(1,10) . ", " . rand(80, 450) . ")";
   $r = mysql_query($sql);
   
   if(!$r){

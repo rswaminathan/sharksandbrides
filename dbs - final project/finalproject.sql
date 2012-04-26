@@ -16,12 +16,12 @@ CREATE TABLE `Accounts` (
 );
 
 CREATE TABLE `Administrators` (
-  admin_id INTEGER NOT NULL,
+  username VARCHAR(64) NOT NULL,
   admin_type VARCHAR(256) NOT NULL,
   dept_id INTEGER NOT NULL,
   first_name VARCHAR(64) NOT NULL,
   last_name VARCHAR(64) NOT NULL,
-  PRIMARY KEY (admin_id)
+  PRIMARY KEY (username)
 );
 
 CREATE TABLE `Aquariums` (
@@ -54,13 +54,12 @@ CREATE TABLE `CreditCards` (
 );
 
 CREATE TABLE `Customers` (
-  customer_id INTEGER NOT NULL,
+  username VARCHAR(64) NOT NULL,
   address VARCHAR(256) NOT NULL,
-  username INTEGER NOT NULL,
   card_id INTEGER,
   first_name VARCHAR(64) NOT NULL,
   last_name VARCHAR(64) NOT NULL,
-  PRIMARY KEY (customer_id)
+  PRIMARY KEY (username)
 );
 
 CREATE TABLE `Departments` (
