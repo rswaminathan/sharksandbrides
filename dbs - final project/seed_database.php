@@ -14,7 +14,7 @@ for($i = 0; $i< 1000; $i++){
   $category = $categories[array_rand($categories)];
   $gender = $genders[array_rand($genders)];
 
-  $sql = "INSERT INTO Sharks(item_id, name, age, category, gender, aquarium_id, price) VALUES(" . $i . ", '" . $name . "', " . rand(0,99) . ", '" . $category . "', '" . $gender . "', " . rand(0,50) . ", " . rand(50,99) . ")";
+  $sql = "INSERT INTO Sharks(item_id, name, age, category, gender, aquarium_id) VALUES(" . $i . ", '" . $name . "', " . rand(0,99) . ", '" . $category . "', '" . $gender . "', " . rand(0,50) . ")";
   $r = mysql_query($sql);
   
   if(!$r){
@@ -31,7 +31,7 @@ for($i = 0; $i< 1000; $i++){
   $name = $femalenames[array_rand($femalenames)];
   $gender = $genders[array_rand($genders)];
 
-  $sql = "INSERT INTO RussianBrides(item_id, name, age, ssn, gender, city_id, price, weight) VALUES(" . $i . ", '" . $name . "', " . rand(0,99) . ", " . rand(100000000, 999999999) . ", '" . $gender . "', " . rand(1,10) . ", " . rand(50,99) . ", " . rand(80, 450) . ")";
+  $sql = "INSERT INTO RussianBrides(item_id, name, age, ssn, gender, city_id, weight) VALUES(" . $i . ", '" . $name . "', " . rand(0,99) . ", " . rand(100000000, 999999999) . ", '" . $gender . "', " . rand(1,10) . ", " . rand(80, 450) . ")";
   $r = mysql_query($sql);
   
   if(!$r){
@@ -63,7 +63,6 @@ for($i = 0; $i< 50; $i++){
 
 //GENERATE HOMETOWNS
 $hometowns = array("Abakan", "Balashov", "Claremont", "Dudinka", "Elista", "Izhevsk", "Kaliningrad", "Kaluga", "Maysky", "Moscow", "Novy Urengoy", "Reutov");
-
   
 for($i = 1; $i<= 10; $i++){
   $mayor = $malenames[array_rand($malenames)];
@@ -77,9 +76,42 @@ for($i = 1; $i<= 10; $i++){
   }
 }
 
+//GENERATE SPECIALS
+$random_sid = array(rand(1,100), rand(101,200), rand(201,300), rand(301,400), rand(401,500), rand(501,600), rand(601,700), rand(701,800), rand(801,900), rand(901,999));
+$random_bid = array(rand(1,100), rand(101,200), rand(201,300), rand(301,400), rand(401,500), rand(501,600), rand(601,700), rand(701,800), rand(801,900), rand(901,999));
+
+for($i = 0; $i< 10; $i++){
+  $sql = "INSERT INTO Specials(special_id, percent_off, shark_id, bride_id) VALUES(" . $i . ", '" . rand(5,95) . "', " . $random_sid[$i] . ", '" . $random_bid[$i] . "')";
+  $r = mysql_query($sql);
+  
+  if(!$r){
+    echo "<div class='alert alert-error'> An error occured seeding the database</div>";
+    echo mysql_error();
+    exit;
+  }
+  
+  $sql = "UPDATE Sharks SET special_id=" . $i . " WHERE item_id='" . $random_sid[$i] ."'";
+  $r = mysql_query($sql);
+  
+  if(!$r){
+    echo "<div class='alert alert-error'> An error occured seeding the database</div>";
+    echo mysql_error();
+    exit;
+  }
+  
+  $sql = "UPDATE RussianBrides SET special_id=" . $i . " WHERE item_id='" . $random_bid[$i] . "'";
+  $r = mysql_query($sql);
+  
+  if(!$r){
+    echo "<div class='alert alert-error'> An error occured seeding the database</div>";
+    echo mysql_error();
+    exit;
+  }
+}
 ?>
 
 <p> Inserted 1000 random sharks into database. </p>
 <p> Inserted 1000 random russian brides into database. </p>
 <p> Inserted 50 random aquariums into database. </p>
 <p> Inserted 10 random hometowns into database. </p>
+<p> Inserted 10 random combo specials (today's deals) into database. </p>

@@ -16,12 +16,12 @@ CREATE TABLE `Accounts` (
 );
 
 CREATE TABLE `Administrators` (
-  admin_id INTEGER NOT NULL,
+  username VARCHAR(64) NOT NULL,
   admin_type VARCHAR(256) NOT NULL,
   dept_id INTEGER NOT NULL,
   first_name VARCHAR(64) NOT NULL,
   last_name VARCHAR(64) NOT NULL,
-  PRIMARY KEY (admin_id)
+  PRIMARY KEY (username)
 );
 
 CREATE TABLE `Aquariums` (
@@ -54,13 +54,12 @@ CREATE TABLE `CreditCards` (
 );
 
 CREATE TABLE `Customers` (
-  customer_id INTEGER NOT NULL,
+  username VARCHAR(64) NOT NULL,
   address VARCHAR(256) NOT NULL,
-  username INTEGER NOT NULL,
   card_id INTEGER,
   first_name VARCHAR(64) NOT NULL,
   last_name VARCHAR(64) NOT NULL,
-  PRIMARY KEY (customer_id)
+  PRIMARY KEY (username)
 );
 
 CREATE TABLE `Departments` (
@@ -81,11 +80,6 @@ CREATE TABLE `Hometowns` (
   population INTEGER NOT NULL,
   mayor VARCHAR(64) NOT NULL,  
   PRIMARY KEY (city_id)
-);
-
-CREATE TABLE `ItemSpecials` (
-  item_id INTEGER NOT NULL,
-  special_id INTEGER NOT NULL
 );
 
 CREATE TABLE `Mayors` (
@@ -119,7 +113,9 @@ CREATE TABLE `Pictures` (
   
 CREATE TABLE `Products` (
   item_id INTEGER NOT NULL,
-  type VARCHAR(64)
+  type VARCHAR(64),
+  percent_off INTEGER,
+  price FLOAT NOT NULL
 );
 
 CREATE TABLE `Reviews` (
@@ -140,9 +136,7 @@ CREATE TABLE `RussianBrides` (
   gender VARCHAR(64) NOT NULL,
   city_id VARCHAR(64) NOT NULL,
   picture_id INTEGER,
-  discount_id INTEGER,
   special_id INTEGER,
-  price FLOAT NOT NULL,
   weight INTEGER NOT NULL,
   PRIMARY KEY (item_id)
 );
@@ -155,9 +149,7 @@ CREATE TABLE `Sharks` (
   gender VARCHAR(64) NOT NULL,
   picture_id INTEGER,
   aquarium_id INTEGER NOT NULL,
-  discount_id INTEGER,
   special_id INTEGER,
-  price FLOAT NOT NULL,
   PRIMARY KEY (item_id)
 );
 
@@ -172,6 +164,8 @@ CREATE TABLE `ShippingMethods` (
 CREATE TABLE `Specials` (
   special_id INTEGER NOT NULL,
   percent_off INTEGER NOT NULL,
+  shark_id INTEGER NOT NULL,
+  bride_id INTEGER NOT NULL,
   PRIMARY KEY (special_id)
 );
 
