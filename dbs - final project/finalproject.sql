@@ -114,6 +114,7 @@ CREATE TABLE `Pictures` (
 CREATE TABLE `Products` (
   item_id INTEGER NOT NULL,
   type VARCHAR(64),
+  description VARCHAR(512),
   percent_off INTEGER,
   price FLOAT NOT NULL
 );
