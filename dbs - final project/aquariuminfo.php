@@ -43,8 +43,8 @@ while ($shark = mysql_fetch_assoc($sharks)) {
 <div class="caption">
 <h4> <?= $shark["name"] ?> </h4>
 <p>
-<a href="/cart/?id=<?= $shark_id ?>" class="btn btn-primary">Add to Cart</a>
-<a href="/reviews/?id=<?= $shark_id ?>" class="btn">Reviews</a>
+<a href="/index.php/cart?item_id=<?= $shark_id ?>" class="btn btn-primary">Add to Cart</a>
+<a href="/index.php/reviews?id=<?= $shark_id ?>" class="btn">Reviews</a>
 </p>
 </div>
 </div>

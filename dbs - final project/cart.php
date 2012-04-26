@@ -2,9 +2,10 @@
   <h1> Your Cart </h1>
 </div>
 
-<? if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  $item_id = $_POST['item_id'];
+<?
   $customer_id = current_user();
+  if (isset($_GET['item_id'])) {
+  $item_id = $_GET['item_id'];
   $result = mysql_query("INSERT INTO Cart(item_id, customer_id) VALUES('$item_id', '$customer_id')");
  ?>
 
@@ -17,15 +18,33 @@
 <div class="well">
   <div class="row">
     <div class="span4">
-      <img src="/static/shark.png">
+    <h3>Item</h3>
     </div>
     <div class="span4">
-      Blue Whale
+  <h3>Description</h3>
     </div>
     <div class="span3">
-      $29.99
+  <h3>Price</h3>
     </div>
   </div>
+<? $items = mysql_query("SELECT * FROM Cart WHERE customer_id='$customer_id'");
+while ($row = mysql_fetch_assoc($items)){
+  $item = "Shark";
+  $price = "29.99";
+  $picture = "";
+?>
+  <div class="row">
+    <div class="span4">
+      <img src=" <?= $item ?>">
+    </div>
+    <div class="span4">
+      <?= $item ?>
+    </div>
+    <div class="span3">
+    $<?= $price ?>
+    </div>
+  </div>
+<? } ?>
 </div>
 
 <form class="checkout" action="/index.php/checkout/">
