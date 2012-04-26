@@ -6,7 +6,7 @@
 $customer_id = current_user();
 if (!$customer_id){ ?>
   <script type="text/javascript">
-    window.location = "/index.php/home"
+    window.location = "/index.php/ureg"
   </script>
 <?}
 if (isset($_GET['item_id'])) {
@@ -50,15 +50,9 @@ while ($row = mysql_fetch_assoc($items)){
   $picture = "";
 ?>
   <div class="row">
-    <div class="span4">
-      <img src="/<?= $item ?>" height="100px" width="100px">
-    </div>
-    <div class="span4">
-      <?= $item["name"] ?>
-    </div>
-    <div class="span3">
-    $<?= $product["price"] ?>
-    </div>
+    <div class="span4"> <img src="/<?= $item ?>" height="100px" width="100px"> </div>
+    <div class="span4"><?= $item["name"] ?></div>
+    <div class="span3"> $<?= $product["price"] ?> </div>
   </div>
 <? } ?>
 </div>

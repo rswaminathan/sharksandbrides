@@ -4,6 +4,8 @@
 
 <?
 
+$sql = implode("\n", file('buildDB.sql'));
+mysql_query($sql);
 //GENERATE SHARKS
 $malenames = array("Liam", "Noah", "Aiden", "Jackson", "Caleb", "Oliver", "Grayson", "Ethan", "Alexander", "Owen", "Art", "Kevin", "Rahul", "Richard");
 $categories = array("Great White", "Tiger", "Whale", "Bull", "Hammerhead", "Goblin", "Mako", "Blue", "Lemon", "Basking", "Megamouth", "Prehistoric");
@@ -16,7 +18,7 @@ for($i = 0; $i< 1000; $i++){
 
   $sql = "INSERT INTO Sharks(item_id, name, age, category, gender, aquarium_id, picture_id) VALUES(" . $i . ", '" . $name . "', " . rand(0,99) . ", '" . $category . "', '" . $gender . "', " . rand(0,50) .",".rand(1,20).")";
   $r = mysql_query($sql);
-  
+
   if(!$r){
     echo "<div class='alert alert-error'> An error occured seeding the database</div>";
     echo mysql_error();
@@ -33,7 +35,7 @@ for($i = 0; $i< 1000; $i++){
 
   $sql = "INSERT INTO RussianBrides(item_id, name, age, ssn, gender, city_id, weight, picture_id) VALUES(" . $i . ", '" . $name . "', " . rand(0,99) . ", " . rand(100000000, 999999999) . ", '" . $gender . "', " . rand(1,10) . ", " . rand(80, 450) . "," . rand(21,40). ")";
   $r = mysql_query($sql);
-  
+
   if(!$r){
     echo "<div class='alert alert-error'> An error occured seeding the database</div>";
     echo mysql_error();
@@ -53,7 +55,7 @@ for($i = 0; $i< 50; $i++){
 
   $sql = "INSERT INTO Aquariums(aquarium_id, date_founded, manager, trainer, name) VALUES(" . $i . ", '" . rand(1900,2011) . "-" . rand(1,12) . "-" . rand(1, 28) . "', '" . $manager . "', '" . $trainer . "', '" . $aquarium . "')";
   $r = mysql_query($sql);
-  
+
   if(!$r){
     echo "<div class='alert alert-error'> An error occured seeding the database</div>";
     echo mysql_error();
@@ -63,12 +65,12 @@ for($i = 0; $i< 50; $i++){
 
 //GENERATE HOMETOWNS
 $hometowns = array("Abakan", "Balashov", "Claremont", "Dudinka", "Elista", "Izhevsk", "Kaliningrad", "Kaluga", "Maysky", "Moscow", "Novy Urengoy", "Reutov");
-  
+
 for($i = 1; $i<= 10; $i++){
   $mayor = $malenames[array_rand($malenames)];
   $sql = "INSERT INTO Hometowns(city_id, name, population, mayor) VALUES(" . $i . ", '" . $hometowns[$i] . "', " . rand(90000, 9000001) . ", '" . $mayor . "')";
   $r = mysql_query($sql);
-  
+
   if(!$r){
     echo "<div class='alert alert-error'> An error occured seeding the database</div>";
     echo mysql_error();
@@ -83,25 +85,25 @@ $random_bid = array(rand(1,100), rand(101,200), rand(201,300), rand(301,400), ra
 for($i = 0; $i< 10; $i++){
   $sql = "INSERT INTO Specials(special_id, percent_off, shark_id, bride_id) VALUES(" . $i . ", '" . rand(5,95) . "', " . $random_sid[$i] . ", '" . $random_bid[$i] . "')";
   $r = mysql_query($sql);
-  
+
   if(!$r){
     echo "<div class='alert alert-error'> An error occured seeding the database</div>";
     echo mysql_error();
     exit;
   }
-  
+
   $sql = "UPDATE Sharks SET special_id=" . $i . " WHERE item_id='" . $random_sid[$i] ."'";
   $r = mysql_query($sql);
-  
+
   if(!$r){
     echo "<div class='alert alert-error'> An error occured seeding the database</div>";
     echo mysql_error();
     exit;
   }
-  
+
   $sql = "UPDATE RussianBrides SET special_id=" . $i . " WHERE item_id='" . $random_bid[$i] . "'";
   $r = mysql_query($sql);
-  
+
   if(!$r){
     echo "<div class='alert alert-error'> An error occured seeding the database</div>";
     echo mysql_error();
@@ -118,7 +120,7 @@ for($i = 1; $i< 21; $i++){
   $picture_type = "shark";
   $sql = "INSERT INTO Pictures(picture_id, picture_url, picture_width, picture_height, picture_type) VALUES(".$picture_id.", '" . $picture_url . "', " . $picture_width . ", " . $picture_height . ", '" . $picture_type . "')";
   $r = mysql_query($sql);
-  
+
   if(!$r){
     echo "<div class='alert alert-error'> An error occured seeding the database</div>";
     echo mysql_error();
@@ -131,7 +133,7 @@ for($i = 1; $i< 21; $i++){
   $picture_type = "bride";
   $sql = "INSERT INTO Pictures(picture_id, picture_url, picture_width, picture_height, picture_type) VALUES(".$picture_id.", '" . $picture_url . "', " . $picture_width . ", " . $picture_height . ", '" . $picture_type . "')";
   $r = mysql_query($sql);
-  
+
   if(!$r){
     echo "<div class='alert alert-error'> An error occured seeding the database</div>";
     echo mysql_error();
