@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1> Your Cart </h1>
+  <h1>Review Purchase</h1>
 </div>
 
 <?
@@ -8,18 +8,7 @@ if (!$username){ ?>
   <script type="text/javascript">
     window.location = "/index.php/ureg"
   </script>
-<?}
-if (isset($_GET['item_id'])) {
-  $item_id = $_GET['item_id'];
-  $item_type = $_GET['type'];
-  $result = mysql_query("INSERT INTO Cart(item_id, username, type) VALUES('$item_id', '$username', '$item_type')");
-?>
-
-<div class="alert alert-success">
-Item has been added to cart.
-</div>
-<? }
-?>
+<?} ?>
 
 <div class="well">
   <div class="row">
@@ -34,6 +23,7 @@ Item has been added to cart.
     </div>
   </div>
 <? $items = mysql_query("SELECT * FROM Cart WHERE username='$username'");
+  $total_price = mysql_fetch_array(mysql_query("SELECT SUM(price) FROM Cart WHERE username='$username'"));
 while ($row = mysql_fetch_assoc($items)){
   //get either shark or bride
   $item_id = $row["item_id"];
@@ -59,8 +49,16 @@ while ($row = mysql_fetch_assoc($items)){
     <div class="span3"> $<?= $product["price"] ?> </div>
   </div>
 <? } ?>
+  <div class="row">
+    <div class="span4">
+    <h3>Total Price:</h3>
+    </div>
+    <div class="span3" style="float:right;">
+  <h3></h3>
+    </div>
+  </div>
 </div>
 
 <div class="checkout" style="float:right;">
-<a href="/index.php/checkout" class="btn btn-large btn-primary">Checkout</a>
+<a href="/index.php/checkout" class="btn btn-large btn-primary">Confirm Purchase</a>
 </div>
