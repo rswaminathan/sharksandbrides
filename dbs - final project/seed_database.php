@@ -4,8 +4,6 @@
 
 <?
 
-shell_exec("mysql -uroot < finalproject.sql");
-echo mysql_error();
 //GENERATE SHARKS
 $malenames = array("Liam", "Noah", "Aiden", "Jackson", "Caleb", "Oliver", "Grayson", "Ethan", "Alexander", "Owen", "Art", "Kevin", "Rahul", "Richard");
 $categories = array("Great White", "Tiger", "Whale", "Bull", "Hammerhead", "Goblin", "Mako", "Blue", "Lemon", "Basking", "Megamouth", "Prehistoric");
